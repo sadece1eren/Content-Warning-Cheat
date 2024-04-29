@@ -6,7 +6,7 @@ This mod menu was created by jhrox, also known as sadece1eren.
 
 1. Use any mono injector; I recommend Sharp Mono Injector.
 2. Select the following options:
-   - Namespace: *(Do not modify)*
+   - Namespace: ContentWarningCheat
    - Class Name: Loader
    - Method Name: Init
 

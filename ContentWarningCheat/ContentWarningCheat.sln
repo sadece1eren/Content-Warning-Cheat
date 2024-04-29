@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentWarningCheat", "ContentWarningCheat\ContentWarningCheat.csproj", "{0F88B863-97F5-461F-8566-D21718C2A964}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F88B863-97F5-461F-8566-D21718C2A964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F88B863-97F5-461F-8566-D21718C2A964}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F88B863-97F5-461F-8566-D21718C2A964}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F88B863-97F5-461F-8566-D21718C2A964}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {991A43B2-8B0B-4983-B07E-511598ECD0B3}
+	EndGlobalSection
+EndGlobal

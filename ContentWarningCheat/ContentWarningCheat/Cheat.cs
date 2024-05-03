@@ -1,9 +1,7 @@
-﻿using System.Reflection;
-using Unity.VisualScripting.FullSerializer;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Photon.Pun;
-using Unity.VisualScripting;
 using Photon.Realtime;
 using static HasSpaceTest;
 using TMPro;
@@ -14,6 +12,8 @@ using static UnityEngine.UIElements.UxmlAttributeDescription;
 using System.Threading;
 using Zorro.Core;
 using Zorro.Core.CLI;
+using System.Globalization;
+using static BedBoss;
 
 namespace ContentWarningCheat
 {
@@ -45,6 +45,12 @@ namespace ContentWarningCheat
         private bool MonsterStringEspToogle;
         private bool brokedrone;
         private bool alwaysopendoor;
+        private bool makegameharder;
+        private bool closelasers;
+        private bool crazymonsters;
+        private bool crazytrampoline;
+        private bool crazypool;
+        private bool setevening;
         private float speedslider = 2f;
         private float gravityslider = 20.0f;
         public static ItemInstance[] Itemss;
@@ -84,6 +90,11 @@ namespace ContentWarningCheat
             var playerControllers = GameObject.FindObjectsOfType<PlayerController>();
             var videoCameras = GameObject.FindObjectsOfType<VideoCamera>();
             var drone = GameObject.FindObjectsOfType<Drone>();
+            var lasers = GameObject.FindObjectsOfType<Laser>();
+            var monsters = GameObject.FindObjectsOfType<Bot>();
+            var trampoline = GameObject.FindObjectsOfType<Trampoline>();
+            var water = GameObject.FindObjectsOfType<Water>();
+            var room = GameObject.FindObjectsOfType<EveningToggler>();
             KeyBoardStuff();
             if (godmode)
             {
@@ -181,7 +192,7 @@ namespace ContentWarningCheat
             }
             if (nogravity == true || nogravity == false)
             {
-                if(nogravity == true)
+                if (nogravity == true)
                 {
                     foreach (PlayerController playerController in playerControllers)
                     {
@@ -247,7 +258,7 @@ namespace ContentWarningCheat
                     diving.LockDoors();
                 }
             }
-            
+
             if (reqsleep)
             {
                 Bed[] beds = FindObjectsOfType<Bed>();
@@ -280,8 +291,67 @@ namespace ContentWarningCheat
                     doorsliding.RPCA_Open();
                 }
             }
+            if (makegameharder)
+            {
+                foreach (DivingBell diving in divingBell)
+                {
+                    diving.spawnDifficulty = 200f;
+                }
+            }
+            if (closelasers)
+            {
+                foreach (Laser laser in lasers)
+                {
+                    laser.enabled = false;
+                    laser.liveLaser = false;
+                }
+            }
+            if (crazymonsters)
+            {
+                foreach (Bot crazymonsters in monsters)
+                {
+                    crazymonsters.attacking = true;
+                    crazymonsters.jumpScareLevel = 100;
+                    crazymonsters.moveSpeedMultiplier = 22f;
+                    crazymonsters.navigationSpeedAdjustment = 22f;
+                    crazymonsters.animMoveSpeedFactor = 22f;
+                }
+            }
+            if (crazytrampoline)
+            {
+                foreach (Trampoline trampo in trampoline)
+                {
+                    trampo.bounceForce = 3f;
+                    trampo.launchForce = 3f;
+                    trampo.launchForceRagdoll = 3f;
+                    trampo.bounceForce = 3f;
+                }
+            }
+            if (crazypool)
+            {
+                foreach (Water pool in water)
+                {
+                    pool.force = 5f;
+                    pool.drag = 5f;
+                    pool.playerForceM = 100f;
+                    pool.maxDepth = 15f;
+                }
+            }
+            if (setevening)
+            {
+                foreach (EveningToggler killme in room)
+                {
+                    killme.DayTimeChanged(TimeOfDay.Evening);
+                }
+            }
+            else if (!setevening)
+            {
+                foreach (EveningToggler killme in room)
+                {
+                    killme.DayTimeChanged(TimeOfDay.Morning);
+                }
+            }
         }
-
         void OnGUI()
         {
             if (menushow)
@@ -463,6 +533,7 @@ namespace ContentWarningCheat
 
             void menu4(int id)
             {
+                windowRect.height = 350f;
                 GUIStyle windowStyle = new GUIStyle(GUI.skin.window);
                 Color hoverColor = new Color(0f, 51f / 255f, 102f / 255f);
                 Texture2D hoverTexture = new Texture2D(1, 1);
@@ -537,6 +608,7 @@ namespace ContentWarningCheat
 
             void menu3(int id)
             {
+                windowRect.height = 350f;
                 GUIStyle windowStyle = new GUIStyle(GUI.skin.window);
                 Color hoverColor = new Color(0f, 51f / 255f, 102f / 255f);
                 Texture2D hoverTexture = new Texture2D(1, 1);
@@ -606,9 +678,13 @@ namespace ContentWarningCheat
                 }
                 GUILayout.EndVertical();
             }
-            void menu2(int id)
+
+        void menu2(int id)
             {
+                windowRect.height = 375f;
                 var divingBell = GameObject.FindObjectsOfType<DivingBell>();
+                var pickups = GameObject.FindObjectsOfType<Pickup>();
+                var bleed = GameObject.FindObjectsOfType<Bleed>();
                 GUIStyle windowStyle = new GUIStyle(GUI.skin.window);
                 Color hoverColor = new Color(0f, 51f / 255f, 102f / 255f);
                 Texture2D hoverTexture = new Texture2D(1, 1);
@@ -681,6 +757,25 @@ namespace ContentWarningCheat
                 }
                 GUILayout.EndHorizontal();
                 GUILayout.BeginHorizontal();
+                if (GUILayout.Button("Force Players To Pickup Item", GUILayout.Width(186), GUILayout.Height(52)))
+                {
+                    Pickup[] pickup = FindObjectsOfType<Pickup>();
+                    Player[] players = Cheat.players;
+                    for (int i = 0; i < Mathf.Min(pickup.Length, players.Length); i++)
+                    {
+                        pickup[i].Interact(players[i]);
+                    }
+                }
+                if (GUILayout.Button("Start Game", GUILayout.Width(125), GUILayout.Height(52)))
+                {
+                    SurfaceNetworkHandler.Instance.RequestStartGame();   
+                }
+                if (GUILayout.Button("Reset Surface", GUILayout.Width(253), GUILayout.Height(52)))
+                {
+                    SurfaceNetworkHandler.ResetSurface();
+                }
+                GUILayout.EndHorizontal();
+                GUILayout.BeginHorizontal();
                 fastbeep = GUILayout.Toggle(fastbeep, "Fast Camera Beep", GUILayout.Width(125));
                 GUILayout.Space(20f);
                 lockdivingbelldoor = GUILayout.Toggle(lockdivingbelldoor, "Divingbell Lock", GUILayout.Width(125));
@@ -693,6 +788,17 @@ namespace ContentWarningCheat
                 brokedrone = GUILayout.Toggle(brokedrone, "Broke The Drone", GUILayout.Width(125));
                 GUILayout.Space(20f);
                 alwaysopendoor = GUILayout.Toggle(alwaysopendoor, "Open Sliding Doors", GUILayout.Width(130));
+                makegameharder = GUILayout.Toggle(makegameharder, "More Harder Spawn", GUILayout.Width(130));
+                GUILayout.Space(25f);
+                closelasers = GUILayout.Toggle(closelasers, "Close Lasers", GUILayout.Width(130));
+                GUILayout.EndHorizontal();
+                GUILayout.BeginHorizontal();
+                crazymonsters = GUILayout.Toggle(crazymonsters, "Crazy Monsters", GUILayout.Width(130));
+                GUILayout.Space(15f);
+                crazytrampoline = GUILayout.Toggle(crazytrampoline, "Crazy Trampoline", GUILayout.Width(130));
+                crazypool = GUILayout.Toggle(crazypool, "Crazy Pool Physics ", GUILayout.Width(130));
+                GUILayout.Space(25f);
+                setevening  = GUILayout.Toggle(setevening, "Time Set Evening", GUILayout.Width(130));
                 GUILayout.EndHorizontal();
                 GUILayout.BeginVertical();
                 GUILayout.Space(10f);
@@ -729,7 +835,13 @@ namespace ContentWarningCheat
                     }
 
                 }
-
+                if (GUILayout.Button("Delete Pickups", GUILayout.Width(186), GUILayout.Height(52), GUILayout.ExpandWidth(false)))
+                {
+                    foreach (Pickup pickup in pickups)
+                    {
+                        pickup.RPC_Remove();
+                    }
+                }
                 GUILayout.EndHorizontal();
                 GUILayout.EndVertical();
             }
@@ -737,7 +849,10 @@ namespace ContentWarningCheat
 
         private void menu(int id)
         {
+            windowRect.height = 465f;
             players = FindObjectsOfType<Player>();
+            var hat = GameObject.FindObjectsOfType<HatShop>();
+            var inventory = GameObject.FindObjectsOfType<PlayerInventory>();
             GUIStyle windowStyle = new GUIStyle(GUI.skin.window);
             Color hoverColor = new Color(0f, 51f / 255f, 102f / 255f);
             Texture2D hoverTexture = new Texture2D(1, 1);
@@ -785,6 +900,23 @@ namespace ContentWarningCheat
             {
                 thewalkingdead = true;
                 Player.localPlayer.Die();
+            }
+            GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("Add 500K Meta Coins", GUILayout.Width(186), GUILayout.Height(52), GUILayout.ExpandWidth(false)))
+            {
+                MetaProgressionHandler.AddMetaCoins(500000);
+            }
+            if (GUILayout.Button("Remove 500K Meta Coins", GUILayout.Width(186), GUILayout.Height(52), GUILayout.ExpandWidth(false)))
+            {
+                MetaProgressionHandler.RemoveMetaCoins(500000);
+            }
+            if (GUILayout.Button("Clear Inventory", GUILayout.Width(186), GUILayout.Height(52), GUILayout.ExpandWidth(false)))
+            {
+                foreach(PlayerInventory playerinventory in inventory)
+                {
+                    playerinventory.Clear();
+                }
             }
             GUILayout.EndHorizontal();
             GUILayout.BeginHorizontal();
@@ -844,6 +976,23 @@ namespace ContentWarningCheat
                             player.CallRevive();
                         }
                     }
+                }
+            }
+            GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("Add Inf Quota (Host Only)", GUILayout.Width(186), GUILayout.Height(52), GUILayout.ExpandWidth(false)))
+            {
+                SurfaceNetworkHandler.RoomStats.AddQuota(99999999);
+            }
+            if (GUILayout.Button("Delete 50K Money(Host Only)", GUILayout.Width(186), GUILayout.Height(52), GUILayout.ExpandWidth(false)))
+            {
+                SurfaceNetworkHandler.RoomStats.RemoveMoney(50000);
+            }
+            if (GUILayout.Button("Restock Hat Store", GUILayout.Width(186), GUILayout.Height(52), GUILayout.ExpandWidth(false)))
+            {
+                foreach(HatShop hatshop in hat)
+                {
+                    hatshop.Restock();
                 }
             }
             GUILayout.EndHorizontal();

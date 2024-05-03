@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -8,337 +8,325 @@
 
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="Photon3Unity3D">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Photon3Unity3D.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Photon3Unity3D.dll</HintPath>
     </Reference>
     <Reference Include="PhotonChat">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\PhotonChat.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\PhotonChat.dll</HintPath>
     </Reference>
     <Reference Include="PhotonRealtime">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\PhotonRealtime.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\PhotonRealtime.dll</HintPath>
     </Reference>
     <Reference Include="PhotonUnityNetworking">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\PhotonUnityNetworking.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\PhotonUnityNetworking.dll</HintPath>
     </Reference>
     <Reference Include="PhotonUnityNetworking.Utilities">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\PhotonUnityNetworking.Utilities.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\PhotonUnityNetworking.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="PhotonVoice">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\PhotonVoice.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\PhotonVoice.dll</HintPath>
     </Reference>
     <Reference Include="PhotonVoice.API">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\PhotonVoice.API.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\PhotonVoice.API.dll</HintPath>
     </Reference>
     <Reference Include="PhotonVoice.PUN">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\PhotonVoice.PUN.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\PhotonVoice.PUN.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Addressables">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Addressables.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Addressables.dll</HintPath>
     </Reference>
     <Reference Include="Unity.AI.Navigation">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.AI.Navigation.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.AI.Navigation.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Animation.Rigging">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Animation.Rigging.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Animation.Rigging.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Animation.Rigging.DocCodeExamples">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Animation.Rigging.DocCodeExamples.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Animation.Rigging.DocCodeExamples.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Burst.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Unsafe">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Burst.Unsafe.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Collections">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Collections.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.013">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.InternalAPIEngineBridge.013.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.InternalAPIEngineBridge.013.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Localization">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Localization.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Localization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Mathematics.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlayableGraphVisualizer">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.PlayableGraphVisualizer.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.PlayableGraphVisualizer.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ResourceManager">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.ResourceManager.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.ResourceManager.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ScriptableBuildPipeline">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.ScriptableBuildPipeline.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.ScriptableBuildPipeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Splines">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Splines.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Splines.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.VisualScripting.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.VisualScripting.Flow.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.VisualScripting.State.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AccessibilityModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.AccessibilityModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.AccessibilityModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.AIModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.AIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AndroidJNIModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.AndroidJNIModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.AndroidJNIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ARModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ARModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ARModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AssetBundleModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AudioModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClothModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClusterInputModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ClusterInputModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ClusterInputModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClusterRendererModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ClusterRendererModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ClusterRendererModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ContentLoadModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ContentLoadModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ContentLoadModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CrashReportingModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.CrashReportingModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.CrashReportingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.DirectorModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.DirectorModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.DirectorModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.DSPGraphModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.DSPGraphModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.DSPGraphModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.GameCenterModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.GameCenterModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.GameCenterModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.GIModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.GIModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.GIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.GridModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.GridModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.GridModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.HotReloadModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.HotReloadModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.HotReloadModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ImageConversionModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.InputLegacyModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.InputModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.InputModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.InputModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.JSONSerializeModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.LocalizationModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.LocalizationModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.LocalizationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.NVIDIAModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.NVIDIAModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.NVIDIAModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ParticleSystemModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PerformanceReportingModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.PerformanceReportingModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.PerformanceReportingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Physics2DModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ProfilerModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ProfilerModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ProfilerModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PropertiesModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.PropertiesModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.PropertiesModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ScreenCaptureModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SharedInternalsModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.SharedInternalsModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.SharedInternalsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpriteMaskModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpriteShapeModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.SpriteShapeModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.SpriteShapeModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StreamingModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.StreamingModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.StreamingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SubstanceModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.SubstanceModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.SubstanceModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SubsystemsModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.SubsystemsModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.SubsystemsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TerrainModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TerrainPhysicsModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.TerrainPhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextCoreFontEngineModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextCoreTextEngineModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TilemapModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.TilemapModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.TilemapModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TLSModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.TLSModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.TLSModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIElementsModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UmbraModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UmbraModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UmbraModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityAnalyticsModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityAnalyticsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityConnectModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityConnectModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityCurlModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityCurlModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityCurlModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityTestProtocolModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityTestProtocolModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestAudioModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestTextureModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestWWWModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VehiclesModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VFXModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.VFXModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.VFXModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VideoModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VirtualTexturingModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.VirtualTexturingModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.VirtualTexturingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VRModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.VRModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.VRModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.WindModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.WindModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.WindModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XRModule">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.XRModule.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="Zorro.Core.Runtime">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Zorro.Core.Runtime.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Zorro.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Zorro.PhotonUtility">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Zorro.PhotonUtility.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Zorro.PhotonUtility.dll</HintPath>
     </Reference>
     <Reference Include="Zorro.Recorder">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Zorro.Recorder.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Zorro.Recorder.dll</HintPath>
     </Reference>
     <Reference Include="Zorro.Settings.Runtime">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Zorro.Settings.Runtime.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Zorro.Settings.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Zorro.UI.Runtime">
-      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Zorro.UI.Runtime.dll</HintPath>
+      <HintPath>E:\SteamLibrary\steamapps\common\Content Warning\Content Warning_Data\Managed\Zorro.UI.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
 

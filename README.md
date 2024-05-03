@@ -15,8 +15,14 @@ This mod menu was created by jhrox, also known as sadece1eren.
 ### Main Tab
 ![Main Tab](https://media.discordapp.net/attachments/1088122554826375252/1234257059697135786/image.png?ex=6630bbb6&is=662f6a36&hm=a1e27826531abc669a7e42e247d00f80b1d4f43d382e14a481e8935e562cab13&=&format=webp&quality=lossless)
 
+### Main Tab V2
+![Main Tab](https://media.discordapp.net/attachments/1088122554826375252/1236065934867828747/image.png?ex=6636a79b&is=6635561b&hm=9f59eab0edb1c634dd344c59f1396ff1f28cc433d1ca4ff20103acaf914e6c02&=&format=webp&quality=lossless)
+
 ### Troll Tab
 ![Troll Tab](https://cdn.discordapp.com/attachments/1088122554826375252/1234534564609916988/image.png?ex=66311568&is=662fc3e8&hm=b106258b4fabf262473aaffa06f0d2b827e1afc56919518ef349520c891d4198&)
+
+### Troll Tab V2
+![Troll Tab](https://media.discordapp.net/attachments/1088122554826375252/1236066008322543687/image.png?ex=6636a7ad&is=6635562d&hm=cc1b3c493bcbfc1126b45cfd12bfb5255c6f86dfbf60b6f14de030334c7e6d29&=&format=webp&quality=lossless)
 
 ### Spawn Tab
 ![Spawn Tab 1](https://cdn.discordapp.com/attachments/1088122554826375252/1234503577058410576/image.png?ex=6630f88c&is=662fa70c&hm=9c7e99975cf37fa3dfe93e6843e3fd8e74da7de292bc840cbd3134867c0342f4&)

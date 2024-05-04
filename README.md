@@ -2,6 +2,7 @@
 
 This mod menu was created by jhrox, also known as sadece1eren.
 
+ can hide and make the menu visible by pressing esc and pressing insert
 ## Installation
 
 1. Use any mono injector; I recommend Sharp Mono Injector.

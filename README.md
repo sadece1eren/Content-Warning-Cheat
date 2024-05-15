@@ -14,22 +14,19 @@ This mod menu was created by jhrox, also known as sadece1eren.
 ## Screenshots
 
 ### Main Tab
-![Main Tab](https://media.discordapp.net/attachments/1088122554826375252/1234257059697135786/image.png?ex=6630bbb6&is=662f6a36&hm=a1e27826531abc669a7e42e247d00f80b1d4f43d382e14a481e8935e562cab13&=&format=webp&quality=lossless)
-
-### Main Tab V2
-![Main Tab](https://media.discordapp.net/attachments/1088122554826375252/1236065934867828747/image.png?ex=6636a79b&is=6635561b&hm=9f59eab0edb1c634dd344c59f1396ff1f28cc433d1ca4ff20103acaf914e6c02&=&format=webp&quality=lossless)
+![Main Tab](https://cdn.glitch.global/533ecac7-3244-4ed3-989e-f4cb04667266/image%20(13).png)
 
 ### Troll Tab
-![Troll Tab](https://cdn.discordapp.com/attachments/1088122554826375252/1234534564609916988/image.png?ex=66311568&is=662fc3e8&hm=b106258b4fabf262473aaffa06f0d2b827e1afc56919518ef349520c891d4198&)
+![Troll Tab](https://cdn.glitch.global/533ecac7-3244-4ed3-989e-f4cb04667266/image%20(14).png)
 
-### Troll Tab V2
-![Troll Tab](https://media.discordapp.net/attachments/1088122554826375252/1236066008322543687/image.png?ex=6636a7ad&is=6635562d&hm=cc1b3c493bcbfc1126b45cfd12bfb5255c6f86dfbf60b6f14de030334c7e6d29&=&format=webp&quality=lossless)
+### Face Troll Tab
+![Troll Tab](https://cdn.glitch.global/533ecac7-3244-4ed3-989e-f4cb04667266/image%20(17).png)
 
 ### Spawn Tab
-![Spawn Tab 1](https://cdn.discordapp.com/attachments/1088122554826375252/1234503577058410576/image.png?ex=6630f88c&is=662fa70c&hm=9c7e99975cf37fa3dfe93e6843e3fd8e74da7de292bc840cbd3134867c0342f4&)
-![Spawn Tab 2](https://cdn.discordapp.com/attachments/1088122554826375252/1234503617940291726/image.png?ex=6630f896&is=662fa716&hm=a9bce7af9e83bde5c2d852b16439248dfa55ca99bd12ec6e9a1e147968938734&&)
+![Spawn Tab 1](https://cdn.glitch.global/533ecac7-3244-4ed3-989e-f4cb04667266/image%20(15).png)
+![Spawn Tab 2](https://cdn.glitch.global/533ecac7-3244-4ed3-989e-f4cb04667266/image%20(18).png)
 
 ### ESP Tab
-![ESP Tab](https://cdn.discordapp.com/attachments/1088122554826375252/1234587360503529522/image.png?ex=66314694&is=662ff514&hm=64a18cef3b98148a78531a63d8d7156c884d94a0f3455414830048aa2fcf8527&)
+![ESP Tab](https://cdn.glitch.global/533ecac7-3244-4ed3-989e-f4cb04667266/2f313233343538373336303530333532393532322f696d6167652e706e673f65783d36363331343639342669733d3636.png)
 
 Please feel free to make any edits. This is my first internal menu cheat, so I apologize if there are any mistakes. 🙃

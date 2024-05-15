@@ -14,6 +14,11 @@ using Zorro.Core;
 using Zorro.Core.CLI;
 using System.Globalization;
 using static BedBoss;
+using static UnityEngine.Rendering.DebugUI;
+using Zorro.UI;
+using UnityEngine.UI;
+using Zorro.Core.Serizalization;
+using System.Runtime.InteropServices;
 
 namespace ContentWarningCheat
 {
@@ -51,8 +56,26 @@ namespace ContentWarningCheat
         private bool crazytrampoline;
         private bool crazypool;
         private bool setevening;
+        private bool shockyourself;
+        private bool makesoundloop;
+        private bool superspeedothers;
+        private bool slowothers;
+        private bool superspeedmonsters;
+        private bool slowmonsters;
+        private bool reversecontrols;
+        private bool shockplayers;
+        private bool godmodeplayers;
+        private bool playersjumploop;
+        private bool playersfall;
+        private bool clearallinventory;
+        private bool bigsquareall;
+        private bool giveallmcloop;
+        private bool setallplayersname;
+        private int lastClearedSlot;
+        private string playerName = "";
         private float speedslider = 2f;
         private float gravityslider = 20.0f;
+        public float facesize = 0.06f;
         public static ItemInstance[] Itemss;
         private Rect windowRect = new Rect(Screen.width / 2 - 300f, Screen.height / 2 - 175f, 600f, 350f);
         private int mainWID = 1024;
@@ -61,11 +84,17 @@ namespace ContentWarningCheat
         public static Player[] players;
         private Color selectedColor = Color.white;
         private int selectedTab = 0;
+        private string[] hatNames = new string[] { "Balaclava", "Beanie", "Bucket hat", "Cat ears", "Chefs hat", "Floppy hat", "Homburg", "Curly hair", "Bowler hat", "Cap", "Propeller hat", "Clown hair", "Cowboy hat", "Crown", "Halo", "Horns", "Hotdog hat", "Jesters hat", "Ghost hat", "Milk hat", "News cap", "Pirate hat", "Sports helmet", "Savannah hair", "Tooop hat", "Top hat", "Party hat", "Shroom hat", "Ushanka", "Witch hat", "Hard hat" };
         private string[] enemyNames = new string[] { "AnglerMimic", "BarnacleBall", "BigSlap", "Bombs", "Dog", "Ear", "EyeGuy", "Flicker", "Ghost", "Jelly", "Knifo", "Larva", "MimicInfiltrator", "Mouthe", "Slurper", "Snatcho", "Spider", "Snail", "Toolkit_Fan", "Toolkit_Hammer", "Toolkit_Iron", "Toolkit_Vaccum", "Toolkit_Wisk", "Weeping", "Zombe" };
         private int selectedEnemyIndex = -1;
+        private int selectedHatIndex = -1;
         private bool isEnemyDropdownVisible = false;
+        private bool isHatDropdownVisible = false;
         private string enemyButtonText = "Select Enemy";
+        private string hatButtonText = "Select Hat";
         private Vector2 enemyScrollPos;
+        private Vector2 hatScrollPos;
+
         private Texture2D CreateTextureFromColor(Color color)
         {
             Texture2D texture = new Texture2D(1, 1);
@@ -80,7 +109,27 @@ namespace ContentWarningCheat
             {
                 menushow = !menushow;
             }
+            if (Input.GetKeyDown(KeyCode.End))
+            {
+                Loader.UnLoad();
+            }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                foreach (DebugUIHandler item in FindObjectsOfType<DebugUIHandler>())
+                {
+                    item.Hide();
+                }
+            }
         }
+
+        void closedebug()
+        {
+            foreach (DebugUIHandler item in FindObjectsOfType<DebugUIHandler>())
+            {
+                item.Hide();
+            }
+        }
+
 
         void Update()
         {
@@ -95,6 +144,7 @@ namespace ContentWarningCheat
             var trampoline = GameObject.FindObjectsOfType<Trampoline>();
             var water = GameObject.FindObjectsOfType<Water>();
             var room = GameObject.FindObjectsOfType<EveningToggler>();
+            var playerinventory = GameObject.FindObjectsOfType<PlayerInventory>();
             KeyBoardStuff();
             if (godmode)
             {
@@ -351,7 +401,331 @@ namespace ContentWarningCheat
                     killme.DayTimeChanged(TimeOfDay.Morning);
                 }
             }
+            if (shockyourself)
+            {
+                foreach (Player player in players)
+                {
+                    player.RPCA_CallTakeDamageAndTase(0f, 5f);
+                }
+            }
+            if (makesoundloop)
+            {
+                foreach (Player player in players)
+                {
+                    if (player != null)
+                    {
+                        {
+                            int soundID = 0;
+                            player.refs.view.RPC("RPC_MakeSound", RpcTarget.All, new object[]
+{
+            soundID
+});
+                        }
+                    }
+                }
+            }
+            if (superspeedothers)
+            {
+                foreach (Player player in players)
+                {
+                    if (slowothers)
+                    {
+                        slowothers = false;
+                    }
+                    else if (reversecontrols)
+                    {
+                        reversecontrols = false;
+                    }
+                    else
+                    {
+                        if (player != null && !player.ai)
+                        {
+                            {
+                                float speedFactor = 10f;
+                                float time = 1f;
+                                player.refs.view.RPC("RPCA_SlowFor", RpcTarget.All, new object[]
+                                {
+                                speedFactor,
+                                time
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            if (!superspeedothers && !slowothers && !reversecontrols)
+            {
+                foreach (Player player in players)
+                {
+                    if (player != null && !player.ai)
+                    {
+                        {
+                            float speedFactor = 1f;
+                            float time = 1f;
+                            player.refs.view.RPC("RPCA_SlowFor", RpcTarget.All, new object[]
+                            {
+                                speedFactor,
+                                time
+                            });
+                        }
+                    }
+                }
+            }
+            if (slowothers)
+            {
+                foreach (Player player in players)
+                {
+                    if (superspeedothers)
+                    {
+                        superspeedothers = false;
+                    }
+                    else if (reversecontrols)
+                    {
+                        reversecontrols = false;
+                    }
+                    else
+                    {
+                        if (player != null && !player.ai)
+                        {
+                            {
+                                float speedFactor = -0f;
+                                float time = 1f;
+                                player.refs.view.RPC("RPCA_SlowFor", RpcTarget.All, new object[]
+                                {
+                                speedFactor,
+                                time
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            if (reversecontrols)
+            {
+                foreach (Player player in players)
+                {
+                    if (superspeedothers)
+                    {
+                        superspeedothers = false;
+                    }
+                    else if (slowothers)
+                    {
+                        slowothers = false;
+                    }
+                    else
+                    {
+                        if (player != null && !player.ai)
+                        {
+                            {
+                                float speedFactor = -1f;
+                                float time = 1f;
+                                player.refs.view.RPC("RPCA_SlowFor", RpcTarget.All, new object[]
+                                {
+                                speedFactor,
+                                time
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            if (superspeedmonsters)
+            {
+                foreach (Player player in players)
+                {
+                    if (slowmonsters)
+                    {
+                        slowmonsters = false;
+                    }
+                    else
+                    {
+                        if (player != null && player.ai)
+                        {
+                            {
+                                float speedFactor = 10f;
+                                float time = 1f;
+                                player.refs.view.RPC("RPCA_SlowFor", RpcTarget.All, new object[]
+                                {
+                                speedFactor,
+                                time
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            if (!superspeedmonsters && !slowmonsters)
+            {
+                foreach (Player player in players)
+                {
+                    if (player != null && player.ai)
+                    {
+                        {
+                            float speedFactor = 1f;
+                            float time = 1f;
+                            player.refs.view.RPC("RPCA_SlowFor", RpcTarget.All, new object[]
+                            {
+                                speedFactor,
+                                time
+                            });
+                        }
+                    }
+                }
+            }
+            if (slowmonsters)
+            {
+                foreach (Player player in players)
+                {
+                    if (superspeedmonsters)
+                    {
+                        superspeedmonsters = false;
+                    }
+                    else
+                    {
+                        if (player != null && player.ai)
+                        {
+                            {
+                                float speedFactor = -0f;
+                                float time = 1f;
+                                player.refs.view.RPC("RPCA_SlowFor", RpcTarget.All, new object[]
+                                {
+                                speedFactor,
+                                time
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            if (shockplayers)
+            {
+                foreach (Player player in players)
+                {
+                    if (player != null)
+                    {
+                        {
+                            float damage = 0f;
+                            float tase = 1f;
+                            player.refs.view.RPC("RPCA_CallTakeDamageAndTase", RpcTarget.All, new object[]
+                            {
+                                damage,
+                                tase
+                            });
+                        }
+                    }
+                }
+            }
+            if (godmodeplayers)
+            {
+                foreach (Player player in players)
+                {
+                    if (player != null && !player.ai)
+                    {
+                        player.CallHeal(99.99f);
+                    }
+                }
+            }
+            if (playersjumploop)
+            {
+                foreach (PlayerController playercontroller in playerControllers)
+                {
+                    foreach (Player player in players)
+                    {
+                        if (player != null && !player.ai)
+                        {
+                            {
+                                playercontroller.TryJump();
+                            }
+                        }
+                    }
+                }
+            }
+            if (playersfall)
+            {
+                foreach (PlayerController playercontroller in playerControllers)
+                {
+                    foreach (Player player in players)
+                    {
+                        if (player != null && !player.ai)
+                        {
+                            {
+                                float seconds = 1f;
+                                player.refs.view.RPC("RPCA_Fall", RpcTarget.All, new object[]
+                                {
+                                    seconds
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            if (clearallinventory)
+            {
+                foreach (PlayerInventory inventory in playerinventory)
+                {
+                    foreach (Player player in players)
+                    {
+                        if (player != null && !player.ai)
+                        {
+                            {
+                                inventory.SyncClearSlot(lastClearedSlot);
+                            }
+                        }
+                    }
+                }
+            }
+            if (bigsquareall)
+            {
+                foreach (Player player in players)
+                {
+                    if (player != null)
+                    {
+                        float hue = 1f;
+                        int colorIndex = -1;
+                        string faceText = "☭";
+                        float faceRotation = 1f;
+                        float faceSize = 1f;
+                        player.refs.view.RPC("RPCA_SetAllFaceSettings", RpcTarget.AllBuffered, new object[]
+                        {
+                            hue,
+                            colorIndex,
+                            faceText,
+                            faceRotation,
+                            faceSize
+                        });
+                    }
+                }
+            }
+            if (giveallmcloop)
+            {
+                int currentRun = 1000000000;
+                SurfaceNetworkHandler.Instance.photonView.RPC("RPCA_OnNewWeek", RpcTarget.All, new object[]
+                {
+                    currentRun
+                });
+            }
+            if (setallplayersname)
+            {
+                foreach (Player player in players)
+                {
+                    if (player != null)
+                    {
+                        float hue = 1f;
+                        int colorIndex = -1;
+                        float faceRotation = 1f;
+                        player.refs.view.RPC("RPCA_SetAllFaceSettings", RpcTarget.AllBuffered, new object[]
+                        {
+                            hue,
+                            colorIndex,
+                            playerName,
+                            faceRotation,
+                            facesize
+                        });
+                    }
+                }
+            }
         }
+
         void OnGUI()
         {
             if (menushow)
@@ -369,6 +743,9 @@ namespace ContentWarningCheat
                         break;
                     case 3:
                         windowRect = GUI.Window(0, windowRect, menu4, "Content Warning Menu");
+                        break;
+                    case 4:
+                        windowRect = GUI.Window(0, windowRect, menu5, "Content Warning Menu");
                         break;
                     default:
                         Debug.LogError("Invalid tab index!");
@@ -531,6 +908,97 @@ namespace ContentWarningCheat
                 }
             }
 
+            void menu5(int id)
+            {
+                windowRect.width = 400f;
+                windowRect.height = 435f;
+                GUIStyle windowStyle = new GUIStyle(GUI.skin.window);
+                Color hoverColor = new Color(0f, 51f / 255f, 102f / 255f);
+                Texture2D hoverTexture = new Texture2D(1, 1);
+                hoverTexture.SetPixel(0, 0, hoverColor);
+                hoverTexture.Apply();
+                windowStyle.normal.background = hoverTexture;
+                windowStyle.onNormal.background = hoverTexture;
+                windowStyle.onHover.background = hoverTexture;
+                GUI.skin.window = windowStyle;
+                var playervisor = GameObject.FindObjectsOfType<PlayerVisor>();
+                GUILayout.BeginHorizontal();
+                if (GUILayout.Button("Go Back Troll Tab", GUILayout.Width(380f)))
+                {
+                    selectedTab = 1;
+                }
+                GUILayout.EndHorizontal();
+                GUILayout.BeginVertical("Face Troll Stuff", GUI.skin.box);
+                GUILayout.Space(40f);
+                playerName = GUILayout.TextField(playerName, 3);
+                GUILayout.BeginHorizontal();
+                setallplayersname = GUILayout.Toggle(setallplayersname, "Set All Players Face", GUILayout.Width(190));
+                bigsquareall = GUILayout.Toggle(bigsquareall, "All Players Face Big Square", GUILayout.Width(180));
+                GUILayout.EndHorizontal();
+                facesize = GUILayout.HorizontalSlider(facesize, 0.01f, 5.0f);
+                GUILayout.Label("Face Size: " + facesize.ToString());
+                GUILayout.EndVertical();
+                GUILayout.BeginVertical("Illegal Characters", GUI.skin.box);
+                GUILayout.Space(40f);
+                GUILayout.BeginHorizontal();
+                GUILayout.Label("╰⋃╯");
+                if(GUILayout.Button("Copy", GUILayout.Width(120)))
+                {
+                    GUIUtility.systemCopyBuffer = "╰⋃╯";
+                }
+                GUILayout.EndHorizontal();
+                GUILayout.BeginHorizontal();
+                GUILayout.Label("≖ʖ≖");
+                if (GUILayout.Button("Copy", GUILayout.Width(120)))
+                {
+                    GUIUtility.systemCopyBuffer = "≖ʖ≖";
+                }
+                GUILayout.EndHorizontal();
+                GUILayout.BeginHorizontal();
+                GUILayout.Label("≧◡≦");
+                if (GUILayout.Button("Copy", GUILayout.Width(120)))
+                {
+                    GUIUtility.systemCopyBuffer = "≧◡≦";
+                }
+                GUILayout.EndHorizontal();
+                GUILayout.BeginHorizontal();
+                GUILayout.Label("ᵔ.ᵔ");
+                if (GUILayout.Button("Copy", GUILayout.Width(120)))
+                {
+                    GUIUtility.systemCopyBuffer = "ᵔ.ᵔ";
+                }
+                GUILayout.EndHorizontal();
+                GUILayout.BeginHorizontal();
+                GUILayout.Label("＾▿＾");
+                if (GUILayout.Button("Copy", GUILayout.Width(120)))
+                {
+                    GUIUtility.systemCopyBuffer = "＾▿＾";
+                }
+                GUILayout.EndHorizontal();
+                GUILayout.BeginHorizontal();
+                GUILayout.Label("║█║");
+                if (GUILayout.Button("Copy", GUILayout.Width(120)))
+                {
+                    GUIUtility.systemCopyBuffer = "║█║";
+                }
+                GUILayout.EndHorizontal();
+                GUILayout.BeginHorizontal();
+                GUILayout.Label("-_•");
+                if (GUILayout.Button("Copy", GUILayout.Width(120)))
+                {
+                    GUIUtility.systemCopyBuffer = "-_•";
+                }
+                GUILayout.EndHorizontal();
+                GUILayout.BeginHorizontal();
+                GUILayout.Label("Х̶̿̀͊̍̈́͑̓̈́̃̆́Х̶̿̀͊̍̈́Х̶̿̀͊̍̈́");
+                if (GUILayout.Button("Copy", GUILayout.Width(120)))
+                {
+                    GUIUtility.systemCopyBuffer = "Х̶̿̀͊̍̈́͑̓̈́̃̆́Х̶̿̀͊̍̈́Х̶̿̀͊̍̈́";
+                }
+                GUILayout.EndHorizontal();
+                GUILayout.EndVertical();
+            }
+
             void menu4(int id)
             {
                 windowRect.height = 350f;
@@ -608,7 +1076,8 @@ namespace ContentWarningCheat
 
             void menu3(int id)
             {
-                windowRect.height = 350f;
+                windowRect.width = 600;
+                windowRect.height = 515f;
                 GUIStyle windowStyle = new GUIStyle(GUI.skin.window);
                 Color hoverColor = new Color(0f, 51f / 255f, 102f / 255f);
                 Texture2D hoverTexture = new Texture2D(1, 1);
@@ -620,7 +1089,7 @@ namespace ContentWarningCheat
                 GUI.skin.window = windowStyle;
 
                 GUILayout.BeginHorizontal();
-                if (GUILayout.Button("Self - Server", GUILayout.Width(100f)))
+                if (GUILayout.Button("Self - Server",GUILayout.Width(100f)))
                 {
                     selectedTab = 0;
                 }
@@ -641,10 +1110,11 @@ namespace ContentWarningCheat
                 }
                 GUILayout.EndHorizontal();
 
-                GUILayout.BeginVertical("Enemy Spawner", GUI.skin.box);
+                GUILayout.BeginVertical(GUI.skin.box);
                 {
+                    GUILayout.Box("Enemy Spawner");
                     GUILayout.Space(20f);
-                    if (GUILayout.Button(enemyButtonText, GUILayout.Width(570), GUILayout.Height(55)))
+                    if (GUILayout.Button(enemyButtonText, GUILayout.Height(55)))
                     {
                         isEnemyDropdownVisible = !isEnemyDropdownVisible;
                     }
@@ -652,204 +1122,351 @@ namespace ContentWarningCheat
                     {
                         float dropdownHeight = Mathf.Min(enemyNames.Length * 30, 200);
                         GUILayout.BeginVertical(GUI.skin.box, GUILayout.Height(dropdownHeight));
-                        GUILayout.BeginHorizontal();
-                        GUILayout.Space(180);
                         enemyScrollPos = GUILayout.BeginScrollView(enemyScrollPos);
                         foreach (var enemyName in enemyNames)
                         {
-                            if (GUILayout.Button(enemyName, GUILayout.Width(190), GUILayout.Height(30)))
+                            if (GUILayout.Button(enemyName, GUILayout.Height(30)))
                             {
                                 selectedEnemyIndex = Array.IndexOf(enemyNames, enemyName);
                                 enemyButtonText = enemyName;
                                 isEnemyDropdownVisible = false;
                             }
                         }
-                        GUILayout.EndHorizontal();
                         GUILayout.EndScrollView();
                         GUILayout.EndVertical();
                     }
-                    GUILayout.BeginHorizontal();
-                    GUILayout.Space(180);
-                    if (selectedEnemyIndex != -1 && GUILayout.Button("Spawn Enemy", GUILayout.Width(200), GUILayout.Height(40)))
+                    if (selectedEnemyIndex != -1 && GUILayout.Button("Spawn Enemy", GUILayout.Height(40)))
                     {
                         Monster.SpawnMonster(enemyNames[selectedEnemyIndex]);
                     }
-                    GUILayout.EndHorizontal();
                 }
                 GUILayout.EndVertical();
-            }
 
-        void menu2(int id)
-            {
-                windowRect.height = 375f;
-                var divingBell = GameObject.FindObjectsOfType<DivingBell>();
-                var pickups = GameObject.FindObjectsOfType<Pickup>();
-                var bleed = GameObject.FindObjectsOfType<Bleed>();
-                GUIStyle windowStyle = new GUIStyle(GUI.skin.window);
-                Color hoverColor = new Color(0f, 51f / 255f, 102f / 255f);
-                Texture2D hoverTexture = new Texture2D(1, 1);
-                hoverTexture.SetPixel(0, 0, hoverColor);
-                hoverTexture.Apply();
-                windowStyle.normal.background = hoverTexture;
-                windowStyle.onNormal.background = hoverTexture;
-                windowStyle.onHover.background = hoverTexture;
-                GUI.skin.window = windowStyle;
-
-                GUILayout.BeginHorizontal();
-                if (GUILayout.Button("Self - Server", GUILayout.Width(100f)))
+                GUILayout.BeginVertical(GUI.skin.box);
                 {
-                    selectedTab = 0;
-                }
-                GUILayout.Space(56);
-                if (GUILayout.Button("Troll", GUILayout.Width(100f)))
-                {
-                    selectedTab = 1;
-                }
-                GUILayout.Space(56);
-                if (GUILayout.Button("Spawn", GUILayout.Width(100f)))
-                {
-                    selectedTab = 2;
-                }
-                GUILayout.Space(56);
-                if (GUILayout.Button("ESP", GUILayout.Width(100f)))
-                {
-                    selectedTab = 3;
-                }
-                GUILayout.EndHorizontal();
-
-                GUILayout.BeginVertical("Troll Stuff", GUI.skin.box);
-                GUILayout.Space(40f);
-                GUILayout.BeginHorizontal();
-
-                if (GUILayout.Button("Force Players To Sleep", GUILayout.Width(186), GUILayout.Height(52)))
-                {
-                    Bed[] beds = FindObjectsOfType<Bed>();
-                    Player[] players = Cheat.players;
-
-                    for (int i = 0; i < Mathf.Min(beds.Length, players.Length); i++)
+                    GUILayout.Box("Hat Spawner");
+                    GUILayout.Space(20f);
+                    if (GUILayout.Button(hatButtonText, GUILayout.Height(55)))
                     {
-                        beds[i].RequestSleep(players[i]);
+                        isHatDropdownVisible = !isHatDropdownVisible;
+                    }
+                    if (isHatDropdownVisible)
+                    {
+                        float dropdownHeight = Mathf.Min(hatNames.Length * 30, 200);
+                        GUILayout.BeginVertical(GUI.skin.box, GUILayout.Height(dropdownHeight));
+                        hatScrollPos = GUILayout.BeginScrollView(hatScrollPos);
+                        foreach (var hatName in hatNames)
+                        {
+                            if (GUILayout.Button(hatName, GUILayout.Height(30)))
+                            {
+                                selectedHatIndex = Array.IndexOf(hatNames, hatName);
+                                hatButtonText = hatName;
+                                isHatDropdownVisible = false;
+                            }
+                        }
+                        GUILayout.EndScrollView();
+                        GUILayout.EndVertical();
+                    }
+                    if (selectedHatIndex != -1 && GUILayout.Button("Spawn Hat", GUILayout.Height(40)))
+                    {
+                        MetaProgressionHandler.EquipHat(selectedHatIndex);
+                    }
+                    if (selectedHatIndex != -1 && GUILayout.Button("Spawn Hat For All Players", GUILayout.Height(40)))
+                    {
+                        foreach (DebugUIHandler item in FindObjectsOfType<DebugUIHandler>())
+                        {
+                            item.Show();
+                            foreach (Player player in players)
+                            {
+                                if (player != null)
+                                {
+                                    {
+                                        player.Call_EquipHat(11);
+                                        player.Call_EquipHat(selectedHatIndex);
+                                    }
+                                }
+                            }
+                        }
+                        closedebug();
                     }
                 }
-
-                if (GUILayout.Button("Open Divingbell", GUILayout.Width(125), GUILayout.Height(52)))
-                {
-                    foreach (DivingBell diving in divingBell)
-                    {
-                        diving.locked = false;
-                        diving.AttemptSetOpen(true);
-                        diving.enabled = true;
-                        diving.opened = true;
-                        diving.OnEnable();
-                        diving.SetDoorStateInstant(true);
-                    }
-                }
-
-                if (GUILayout.Button("Kill All Monsters", GUILayout.Width(125), GUILayout.Height(52)))
-                {
-                    Monster.KillAll();
-                    BotHandler.instance.DestroyAll();
-                }
-
-                if (GUILayout.Button("Duplicate Player", GUILayout.Width(125), GUILayout.Height(52)))
-                {
-                    Monster.SpawnMonster("Player");
-                }
-                GUILayout.EndHorizontal();
-                GUILayout.BeginHorizontal();
-                if (GUILayout.Button("Force Players To Pickup Item", GUILayout.Width(186), GUILayout.Height(52)))
-                {
-                    Pickup[] pickup = FindObjectsOfType<Pickup>();
-                    Player[] players = Cheat.players;
-                    for (int i = 0; i < Mathf.Min(pickup.Length, players.Length); i++)
-                    {
-                        pickup[i].Interact(players[i]);
-                    }
-                }
-                if (GUILayout.Button("Start Game", GUILayout.Width(125), GUILayout.Height(52)))
-                {
-                    SurfaceNetworkHandler.Instance.RequestStartGame();   
-                }
-                if (GUILayout.Button("Reset Surface", GUILayout.Width(253), GUILayout.Height(52)))
-                {
-                    SurfaceNetworkHandler.ResetSurface();
-                }
-                GUILayout.EndHorizontal();
-                GUILayout.BeginHorizontal();
-                fastbeep = GUILayout.Toggle(fastbeep, "Fast Camera Beep", GUILayout.Width(125));
-                GUILayout.Space(20f);
-                lockdivingbelldoor = GUILayout.Toggle(lockdivingbelldoor, "Divingbell Lock", GUILayout.Width(125));
-                GUILayout.Space(5f);
-                reqsleep = GUILayout.Toggle(reqsleep, "Players To Sleep Loop", GUILayout.Width(150));
-                GUILayout.Space(5f);
-                killallmonstersloop = GUILayout.Toggle(killallmonstersloop, "Kill Monsters Loop", GUILayout.Width(150));
-                GUILayout.EndHorizontal();
-                GUILayout.BeginHorizontal();
-                brokedrone = GUILayout.Toggle(brokedrone, "Broke The Drone", GUILayout.Width(125));
-                GUILayout.Space(20f);
-                alwaysopendoor = GUILayout.Toggle(alwaysopendoor, "Open Sliding Doors", GUILayout.Width(130));
-                makegameharder = GUILayout.Toggle(makegameharder, "More Harder Spawn", GUILayout.Width(130));
-                GUILayout.Space(25f);
-                closelasers = GUILayout.Toggle(closelasers, "Close Lasers", GUILayout.Width(130));
-                GUILayout.EndHorizontal();
-                GUILayout.BeginHorizontal();
-                crazymonsters = GUILayout.Toggle(crazymonsters, "Crazy Monsters", GUILayout.Width(130));
-                GUILayout.Space(15f);
-                crazytrampoline = GUILayout.Toggle(crazytrampoline, "Crazy Trampoline", GUILayout.Width(130));
-                crazypool = GUILayout.Toggle(crazypool, "Crazy Pool Physics ", GUILayout.Width(130));
-                GUILayout.Space(25f);
-                setevening  = GUILayout.Toggle(setevening, "Time Set Evening", GUILayout.Width(130));
-                GUILayout.EndHorizontal();
-                GUILayout.BeginVertical();
-                GUILayout.Space(10f);
-                GUILayout.EndVertical();
-                GUILayout.BeginHorizontal();
-                GUILayout.Space(230);
-                GUILayout.Label("Only Works On Host", GUILayout.Width(200));
-                GUILayout.EndHorizontal();
-                GUILayout.BeginHorizontal();
-                if (GUILayout.Button("Divingbell To Surface", GUILayout.Width(186), GUILayout.Height(52), GUILayout.ExpandWidth(false)))
-                {
-                    foreach (DivingBell diving in divingBell)
-                    {
-                        diving.GoToSurface();
-                        diving.locked = true;
-                        diving.LockDoors();
-                        diving.opened = false;
-                        diving.AttemptSetOpen(diving.locked);
-                        diving.OnDisable();
-                        diving.LockDoors();
-                    }
-                }
-                if (GUILayout.Button("Divingbell To UnderWorld", GUILayout.Width(186), GUILayout.Height(52), GUILayout.ExpandWidth(false)))
-                {
-                    foreach (DivingBell diving in divingBell)
-                    {
-                        diving.GoUnderground();
-                        diving.locked = true;
-                        diving.LockDoors();
-                        diving.opened = false;
-                        diving.AttemptSetOpen(diving.locked);
-                        diving.OnDisable();
-                        diving.LockDoors();
-                    }
-
-                }
-                if (GUILayout.Button("Delete Pickups", GUILayout.Width(186), GUILayout.Height(52), GUILayout.ExpandWidth(false)))
-                {
-                    foreach (Pickup pickup in pickups)
-                    {
-                        pickup.RPC_Remove();
-                    }
-                }
-                GUILayout.EndHorizontal();
                 GUILayout.EndVertical();
             }
         }
 
+
+        void menu2(int id)
+        {
+            windowRect.width = 600f;
+            windowRect.height = 595f;
+            var divingBell = GameObject.FindObjectsOfType<DivingBell>();
+            var pickups = GameObject.FindObjectsOfType<Pickup>();
+            var playerinventory = GameObject.FindObjectsOfType<PlayerInventory>();
+            GUIStyle windowStyle = new GUIStyle(GUI.skin.window);
+            Color hoverColor = new Color(0f, 51f / 255f, 102f / 255f);
+            Texture2D hoverTexture = new Texture2D(1, 1);
+            hoverTexture.SetPixel(0, 0, hoverColor);
+            hoverTexture.Apply();
+            windowStyle.normal.background = hoverTexture;
+            windowStyle.onNormal.background = hoverTexture;
+            windowStyle.onHover.background = hoverTexture;
+            GUI.skin.window = windowStyle;
+
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("Self - Server", GUILayout.Width(100f)))
+            {
+                selectedTab = 0;
+            }
+            GUILayout.Space(56);
+            if (GUILayout.Button("Troll", GUILayout.Width(100f)))
+            {
+                selectedTab = 1;
+            }
+            GUILayout.Space(56);
+            if (GUILayout.Button("Spawn", GUILayout.Width(100f)))
+            {
+                selectedTab = 2;
+            }
+            GUILayout.Space(56);
+            if (GUILayout.Button("ESP", GUILayout.Width(100f)))
+            {
+                selectedTab = 3;
+            }
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginVertical("Troll Stuff", GUI.skin.box);
+            GUILayout.Space(40f);
+            GUILayout.BeginHorizontal();
+
+            if (GUILayout.Button("Force Players To Sleep", GUILayout.Width(186), GUILayout.Height(52)))
+            {
+                Bed[] beds = FindObjectsOfType<Bed>();
+                Player[] players = Cheat.players;
+
+                for (int i = 0; i < Mathf.Min(beds.Length, players.Length); i++)
+                {
+                    beds[i].RequestSleep(players[i]);
+                }
+            }
+
+            if (GUILayout.Button("Open Divingbell", GUILayout.Width(125), GUILayout.Height(52)))
+            {
+                DivingBellDoorButton[] interact = FindObjectsOfType<DivingBellDoorButton>();
+                Player[] players = Cheat.players;
+                for (int i = 0; i < Mathf.Min(interact.Length, players.Length); i++)
+                {
+                    interact[i].Interact(players[i]);
+                }
+            }
+
+            if (GUILayout.Button("Kill All Monsters", GUILayout.Width(125), GUILayout.Height(52)))
+            {
+                Monster.KillAll();
+                BotHandler.instance.DestroyAll();
+            }
+
+            if (GUILayout.Button("Duplicate Player", GUILayout.Width(125), GUILayout.Height(52)))
+            {
+                Monster.SpawnMonster("Player");
+            }
+            GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("Force Players To Pickup Item", GUILayout.Width(186), GUILayout.Height(52)))
+            {
+                if (Player.localPlayer != null)
+                {
+                    Pickup[] pickup = FindObjectsOfType<Pickup>();
+                    Player[] players = Cheat.players;
+                    for (int i = 0; i < Mathf.Min(players.Length); i++)
+                    {
+                        pickup[i].Interact(players[i]);
+                    }
+                }
+            }
+            if (GUILayout.Button("Start Game", GUILayout.Width(125), GUILayout.Height(52)))
+            {
+                SurfaceNetworkHandler.Instance.RequestStartGame();
+            }
+            if (GUILayout.Button("Reset Surface", GUILayout.Width(252), GUILayout.Height(52)))
+            {
+                SurfaceNetworkHandler.ResetSurface();
+            }
+            GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("Teleport To Random Realm", GUILayout.Width(186), GUILayout.Height(52)))
+            {
+                ShadowRealmHandler.instance.TeleportPlayerToRandomRealm(Player.localPlayer);
+            }
+            if (GUILayout.Button("Teleport Players To Random Realm", GUILayout.Width(383), GUILayout.Height(52)))
+            {
+                foreach (DebugUIHandler item in FindObjectsOfType<DebugUIHandler>())
+                {
+                    item.Show();
+                    Player[] players = GetPlayersOnCurrentServer();
+                    if (players != null && players.Length > 0)
+                    {
+                        foreach (Player player in players)
+                        {
+                            if (player != null)
+                            {
+                                {
+                                    ShadowRealmHandler.instance.TeleportPlayerToRandomRealm(player);
+                                    Debug.Log("!! TO CLOSE THAT MENU JUST PRESS ESC BUTTON !!");
+                                }
+                            }
+                        }
+                    }
+                }
+                closedebug();
+            }
+            GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("Make Sound", GUILayout.Width(186), GUILayout.Height(40)))
+            {
+                foreach (DebugUIHandler item in FindObjectsOfType<DebugUIHandler>())
+                {
+                    item.Show();
+                    foreach (Player player in players)
+                    {
+                        if (player != null)
+                        {
+                            {
+                                int soundID = 0;
+                                player.refs.view.RPC("RPC_MakeSound", RpcTarget.All, new object[]
+{
+            soundID
+});
+                            }
+                        }
+                    }
+                   
+                }
+                closedebug();
+            }
+            if (GUILayout.Button("Give Players MC", GUILayout.Width(125), GUILayout.Height(40)))
+            {
+                int currentRun = 1000000;
+                SurfaceNetworkHandler.Instance.photonView.RPC("RPCA_OnNewWeek", RpcTarget.All, new object[]
+                {
+                    currentRun
+                });
+            }
+            if (GUILayout.Button("Face Troll Tab", GUILayout.Width(252), GUILayout.Height(40)))
+            {
+                selectedTab = 4;
+            }
+            GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            fastbeep = GUILayout.Toggle(fastbeep, "Fast Camera Beep", GUILayout.Width(125));
+            GUILayout.Space(20f);
+            lockdivingbelldoor = GUILayout.Toggle(lockdivingbelldoor, "Divingbell Lock", GUILayout.Width(125));
+            GUILayout.Space(5f);
+            reqsleep = GUILayout.Toggle(reqsleep, "Players To Sleep Loop", GUILayout.Width(150));
+            GUILayout.Space(10f);
+            killallmonstersloop = GUILayout.Toggle(killallmonstersloop, "Kill Monsters Loop", GUILayout.Width(150));
+            GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            brokedrone = GUILayout.Toggle(brokedrone, "Broke The Drone", GUILayout.Width(125));
+            GUILayout.Space(20f);
+            alwaysopendoor = GUILayout.Toggle(alwaysopendoor, "Open Sliding Doors", GUILayout.Width(130));
+            makegameharder = GUILayout.Toggle(makegameharder, "More Harder Spawn", GUILayout.Width(130));
+            GUILayout.Space(30f);
+            closelasers = GUILayout.Toggle(closelasers, "Close Lasers", GUILayout.Width(130));
+            GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            crazymonsters = GUILayout.Toggle(crazymonsters, "Crazy Monsters", GUILayout.Width(130));
+            GUILayout.Space(15f);
+            crazytrampoline = GUILayout.Toggle(crazytrampoline, "Crazy Trampoline", GUILayout.Width(130));
+            crazypool = GUILayout.Toggle(crazypool, "Crazy Pool Physics ", GUILayout.Width(130));
+            GUILayout.Space(30f);
+            setevening = GUILayout.Toggle(setevening, "Time Set Evening", GUILayout.Width(130));
+            GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            makesoundloop = GUILayout.Toggle(makesoundloop, "Make Sound Loop", GUILayout.Width(120));
+            GUILayout.Space(25f);
+            superspeedothers = GUILayout.Toggle(superspeedothers, "All Players Super Speed", GUILayout.Width(165));
+            GUILayout.Space(10f);
+            slowothers = GUILayout.Toggle(slowothers, "All Players Slow", GUILayout.Width(115));
+            shockplayers = GUILayout.Toggle(shockplayers, "Shock Players", GUILayout.Width(160));
+            GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            reversecontrols = GUILayout.Toggle(reversecontrols, "Reverse Player Controls", GUILayout.Width(160));
+            superspeedmonsters = GUILayout.Toggle(superspeedmonsters, "All Monster Super Speed", GUILayout.Width(160));
+            slowmonsters = GUILayout.Toggle(slowmonsters, "All Monster Slow", GUILayout.Width(115));
+            godmodeplayers = GUILayout.Toggle(godmodeplayers, "Godemode Players", GUILayout.Width(130));
+            GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            clearallinventory = GUILayout.Toggle(clearallinventory, "Clear Players Inventory", GUILayout.Width(160));
+            giveallmcloop = GUILayout.Toggle(giveallmcloop, "Drop All Players FPS", GUILayout.Width(150));
+            GUILayout.Space(10f);
+            playersjumploop = GUILayout.Toggle(playersjumploop, "All Players Fly", GUILayout.Width(115));
+            playersfall = GUILayout.Toggle(playersfall, "Make Players Fall", GUILayout.Width(125));
+            GUILayout.EndHorizontal();
+            GUILayout.BeginVertical();
+            GUILayout.Space(10f);
+            GUILayout.EndVertical();
+            GUILayout.BeginHorizontal();
+            GUILayout.Space(230);
+            GUILayout.Label("Only Works On Host", GUILayout.Width(200));
+            GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("Divingbell To Surface", GUILayout.Width(186), GUILayout.Height(52), GUILayout.ExpandWidth(false)))
+            {
+                foreach (DivingBell diving in divingBell)
+                {
+                    diving.GoToSurface();
+                    diving.locked = true;
+                    diving.LockDoors();
+                    diving.opened = false;
+                    diving.AttemptSetOpen(diving.locked);
+                    diving.OnDisable();
+                    diving.LockDoors();
+                }
+            }
+            if (GUILayout.Button("Divingbell To UnderWorld", GUILayout.Width(186), GUILayout.Height(52), GUILayout.ExpandWidth(false)))
+            {
+                foreach (DivingBell diving in divingBell)
+                {
+                    diving.GoUnderground();
+                    diving.locked = true;
+                    diving.LockDoors();
+                    diving.opened = false;
+                    diving.AttemptSetOpen(diving.locked);
+                    diving.OnDisable();
+                    diving.LockDoors();
+                }
+
+            }
+            if (GUILayout.Button("Delete Pickups", GUILayout.Width(186), GUILayout.Height(52), GUILayout.ExpandWidth(false)))
+            {
+                foreach (Pickup pickup in pickups)
+                {
+                    pickup.RPC_Remove();
+                }
+            }
+            GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("Wipe Money", GUILayout.Width(186), GUILayout.Height(52)))
+            {
+                foreach (var player in PhotonNetwork.PlayerListOthers)
+                {
+                    int actorNumber = player.ActorNumber;
+                    SurfaceNetworkHandler.Instance.RPCA_HospitalBill(actorNumber, 99999);
+                }
+            }
+            GUILayout.EndHorizontal();
+            GUILayout.EndVertical();
+        }
+
+        Player[] GetPlayersOnCurrentServer()
+        {
+            return Cheat.players;
+        }
+
         private void menu(int id)
         {
-            windowRect.height = 465f;
+            windowRect.width = 600f;
+            windowRect.height = 555f;
             players = FindObjectsOfType<Player>();
             var hat = GameObject.FindObjectsOfType<HatShop>();
             var inventory = GameObject.FindObjectsOfType<PlayerInventory>();
@@ -920,6 +1537,25 @@ namespace ContentWarningCheat
             }
             GUILayout.EndHorizontal();
             GUILayout.BeginHorizontal();
+            {
+                if (GUILayout.Button("Open Console", GUILayout.Width(281)))
+                {
+                    foreach (DebugUIHandler item in FindObjectsOfType<DebugUIHandler>())
+                    {
+                        item.Show();
+                    }
+                }
+
+                if (GUILayout.Button("Close Console", GUILayout.Width(281)))
+                {
+                    foreach (DebugUIHandler item in FindObjectsOfType<DebugUIHandler>())
+                    {
+                        item.Hide();
+                    }
+                }
+            }
+            GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
             infstamina = GUILayout.Toggle(infstamina, "Inf Stamina", GUILayout.Width(87));
             GUILayout.Space(10f);
             godmode = GUILayout.Toggle(godmode, "Godmode", GUILayout.Width(87));
@@ -940,6 +1576,8 @@ namespace ContentWarningCheat
             superjump = GUILayout.Toggle(superjump, "Super Jump", GUILayout.Width(87));
             GUILayout.Space(10f);
             superspeed = GUILayout.Toggle(superspeed, "Super Speed", GUILayout.Width(92));
+            GUILayout.Space(5f);
+            shockyourself = GUILayout.Toggle(shockyourself, "Shock Yourself", GUILayout.Width(120));
             GUILayout.EndHorizontal();
             GUILayout.Space(10f);
             GUILayout.BeginHorizontal();
@@ -965,7 +1603,7 @@ namespace ContentWarningCheat
             {
                 SurfaceNetworkHandler.RoomStats.AddMoney(50000);
             }
-            if (GUILayout.Button("Revive  All", GUILayout.Width(186), GUILayout.Height(52), GUILayout.ExpandWidth(false)))
+            if (GUILayout.Button("Revive  All Players", GUILayout.Width(186), GUILayout.Height(52), GUILayout.ExpandWidth(false)))
             {
                 if (Cheat.players.Length > 0)
                 {
@@ -990,10 +1628,64 @@ namespace ContentWarningCheat
             }
             if (GUILayout.Button("Restock Hat Store", GUILayout.Width(186), GUILayout.Height(52), GUILayout.ExpandWidth(false)))
             {
-                foreach(HatShop hatshop in hat)
+                foreach (HatShop hatshop in hat)
                 {
                     hatshop.Restock();
                 }
+            }
+            GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("Kill All Players", GUILayout.Width(186), GUILayout.Height(52)))
+            {
+                foreach (DebugUIHandler item in FindObjectsOfType<DebugUIHandler>())
+                {
+                    item.Show();
+                    foreach (Player player in players)
+                    {
+                        if (player != null)
+                        {
+                            {
+                                player.CallTakeDamage(999f);
+                            }
+                        }
+                    }
+                }
+                closedebug();
+            }
+            if (GUILayout.Button("Make Clown All Players", GUILayout.Width(186), GUILayout.Height(52)))
+            {
+                foreach (DebugUIHandler item in FindObjectsOfType<DebugUIHandler>())
+                {
+                    item.Show();
+                    foreach (Player player in players)
+                    {
+                        if (player != null)
+                        {
+                            {
+                                player.Call_EquipHat(11);
+                            }
+                        }
+                    }
+                }
+                closedebug();
+            }
+            if (GUILayout.Button("Make 1HP All Players", GUILayout.Width(186), GUILayout.Height(52)))
+            {
+                foreach (DebugUIHandler item in FindObjectsOfType<DebugUIHandler>())
+                {
+                    item.Show();
+                    foreach (Player player in players)
+                    {
+                        if (player != null)
+                        {
+                            {
+                                player.data.health = 100f;
+                                player.CallTakeDamage(99f);
+                            }
+                        }
+                    }
+                }
+                closedebug();
             }
             GUILayout.EndHorizontal();
             GUILayout.EndVertical();

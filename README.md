@@ -4,7 +4,7 @@
 
 This mod menu was created by jhrox, also known as sadece1eren.
 
-You can hide and make the menu visible by pressing 'Esc' and 'Insert' respectively.
+You can hide and make the menu visible by pressing 'Insert'
 
 ## Installation
 

@@ -1,11 +1,10 @@
 # Content Warning: Cheat Mod Menu
 
-![Logo](https://cdn.glitch.global/5a9b78b7-86cc-44c5-8525-dadbb46a2362/SPOILER_CHEATMODMENUCONTENTWARNING000001.png)
+![Cheat Mod Menu](https://cdn.glitch.global/5a9b78b7-86cc-44c5-8525-dadbb46a2362/SPOILER_CHEATMODMENUCONTENTWARNING000001.png)
 
 This mod menu was created by jhrox, also known as sadece1eren.
 
-
-can hide and make the menu visible by pressing esc and pressing insert
+You can hide and make the menu visible by pressing 'Esc' and 'Insert' respectively.
 
 ## Installation
 
@@ -34,4 +33,4 @@ can hide and make the menu visible by pressing esc and pressing insert
 ![ESP Tab](https://cdn.glitch.global/533ecac7-3244-4ed3-989e-f4cb04667266/2f313233343538373336303530333532393532322f696d6167652e706e673f65783d36363331343639342669733d3636.png)
 
 ## Showcase
-[![showcase](https://vumbnail.com/950350245.jpg)](https://vimeo.com/950350245)
+[![Showcase Video](https://vumbnail.com/950350245.jpg)](https://vimeo.com/950350245)

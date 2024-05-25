@@ -33,7 +33,5 @@ can hide and make the menu visible by pressing esc and pressing insert
 ### ESP Tab
 ![ESP Tab](https://cdn.glitch.global/533ecac7-3244-4ed3-989e-f4cb04667266/2f313233343538373336303530333532393532322f696d6167652e706e673f65783d36363331343639342669733d3636.png)
 
-<div align="center">
 ## Showcase
-[![Showcase Video](https://cdn.glitch.me/72d95cd0-4828-4a3b-a91a-468284ad4b4e/Content%20Warning%20Cheat.mp4?v=1716567699372)
-</div>
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/950350245?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="showcase"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
